@@ -10,7 +10,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int nbDe = 0;
+  int nbDe = 1;
+
+  void _turnDe() {
+    setState(() {});
+  }
+
+  void Un() {
+    setState(() {});
+  }
 
   void PlusUn() {
     setState(() {
@@ -54,11 +62,27 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               ElevatedButton(onPressed: MoinsDix, child: const Text("-10")),
               ElevatedButton(onPressed: MoinsUn, child: const Text("-1")),
+              ElevatedButton(onPressed: Un, child: const Text("1")),
               ElevatedButton(onPressed: PlusUn, child: const Text("-10")),
               ElevatedButton(onPressed: PlusDix, child: const Text("-10")),
             ],
           ),
+          Row(
+            children: [
+              Container(
+                child: Text(
+                  'Nombre de D6: ',
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+              ),
+            ],
+          ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _turnDe,
+        tooltip: 'Start',
+        child: const Icon(Icons.refresh),
       ),
     );
   }
